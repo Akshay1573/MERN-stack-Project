@@ -1,10 +1,11 @@
 import express from "express";
 import mongoose from "mongoose";
-import dbConfig from "./config/db.config.js";
+import dotenv from "dotenv";
 
+dotenv.config();
 
 mongoose
-  .connect(dbConfig.DB_URL)
+  .connect(process.env.MONGO)
   .then(() => {
     console.log("mongoDb is connected");
   })
