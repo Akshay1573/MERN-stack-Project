@@ -29,7 +29,7 @@ export default function SignIn() {
       if(data.success ===false){
         dispatch(signInFailure(data.message));
       }
-      setLoading(false);
+      dispatch(signInFailure(false));
       if(res.ok){
         dispatch(signInSuccess(data));
         Navigate('/');
